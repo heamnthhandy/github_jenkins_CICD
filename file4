@@ -1,1 +1,20 @@
-creating a new file for build after build other project
+pipeline {
+    agent any 
+    stages {
+        stage('Build') { 
+            steps {
+                echo 'from build stage'
+            }
+        }
+        stage('Test') { 
+            steps {
+                echo 'from build stage'
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                echo 'from build stage'
+            }
+        }
+    }
+}
