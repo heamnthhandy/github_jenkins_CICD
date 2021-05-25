@@ -2,16 +2,25 @@ pipeline {
     agent any 
     stages {
         stage('Build') { 
-            steps {
-                echo 'from build stage'
-            }
+           tools {
+           maven 'Maven3.8.1'
+        }
+        steps {
+        sh "mvn clean"
         }
         stage('Test') { 
+         tools {
+           maven 'Maven3.8.1'
+        }
             steps {
                 echo 'from build stage'
             }
         }
         stage('Deploy') { 
+        tools {
+           maven 'Maven3.8.1'
+        }
+        
             steps {
                 echo 'from build stage'
             }
